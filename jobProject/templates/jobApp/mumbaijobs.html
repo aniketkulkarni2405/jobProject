@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+    <title>Mumbai jobs</title>
+  </head>
+  <body>
+    {% if mumbai_data %}
+    <table>
+      <thead>
+        <th>DATE</th>
+        <th>COMPANY</th>
+        <th>TITLE</th>
+        <th>ELIGIBILITY</th>
+        <th>ADDRESS</th>
+        <th>EMAIL</th>
+        <th>PHONE NUMBER</th>
+      </thead>
+      {%for jobs in mumbai_data%}
+      <tr>
+        <td>{{jobs.date}}</td>
+        <td>{{jobs.company}}</td>
+        <td>{{jobs.title}}</td>
+        <td>{{jobs.eligibility}}</td>
+        <td>{{jobs.address}}</td>
+        <td>{{jobs.email}}</td>
+        <td>{{jobs.phonenumber}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No jobs in Mumbai</p>
+    {% endif%}
+  </body>
+</html>

@@ -1,0 +1,10 @@
+h1{
+  background: red;
+}
+table, th, td {
+  border: 1px solid black;
+}
+body{
+  background: yellow;
+  color:red;
+}
